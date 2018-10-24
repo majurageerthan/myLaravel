@@ -27,3 +27,5 @@ Route:: get('/about',function (){
 
 });
 
+Route::resource('posts', 'PostsController');
+
