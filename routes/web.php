@@ -20,10 +20,7 @@ Route::get('/', function () {
     //return 'Welcome';
 });
 
-Route::get('/hello', function () {
-    // return view('welcome');
-    return '<h1> Welcome </h1>';
-});
+Route::get('/h', 'PagesController@index');
 
 Route:: get('/about',function (){
     return view('Pages.about');
