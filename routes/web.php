@@ -13,7 +13,7 @@
 
 //Route :: get('u/{id}',function ($id){
 //    return $id;
-//});
+//});//
 
 Route::get('/', function () {
      return view('welcome');
