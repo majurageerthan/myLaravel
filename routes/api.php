@@ -13,6 +13,16 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+//Route::middleware('auth:api')->get('/user', function (Request $request) {
+//    return $request->user();
+//});
+
+//Route::post('/client',[
+//    'uses' => 'ClientPostController@store'
+//]);
+
+//Post condition for saving
+Route::post('/client', 'ClientApiController@store');
+
+//get condition for reviving data
+Route::get('/client', 'ClientApiController@index');

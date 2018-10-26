@@ -4,4 +4,4 @@
 about
 
 @endsection
-{{$title}}
+{{--{{$title}}--}}

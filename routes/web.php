@@ -16,13 +16,13 @@
 //});//
 
 Route::get('/', function () {
-     return view('welcome');
+    return view('welcome');
     //return 'Welcome';
 });
 
 Route::get('/h', 'PagesController@index');
 
-Route:: get('/about',function (){
+Route:: get('/about', function () {
     return view('Pages.about');
 
 });
