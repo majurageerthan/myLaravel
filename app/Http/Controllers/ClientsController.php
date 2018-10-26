@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Post;
+use App\Client;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
-class PostsController extends Controller
+class ClientsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +15,9 @@ class PostsController extends Controller
      */
     public function index()
     {
-        //
-        $posts = Post::all();
-        return view('pos.index')->with('posts', $posts);
+        $clients = DB::table('clients')->get();
+
+        return view('Clients.index', ['clients' => $clients]);
     }
 
     /**
@@ -26,7 +27,7 @@ class PostsController extends Controller
      */
     public function create()
     {
-        //
+        return view('Clients.create');
     }
 
     /**
@@ -37,7 +38,23 @@ class PostsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //this is a store function to mySql
+        /* $this->validate($request,[
+              'name'=> 'required',
+              'email'=> 'required',
+              'password'=> 'required'
+          ]);*/
+
+        $client = new Client([
+            'name' => $request->get('name'),
+            'email' => $request->get('email'),
+            'password' => $request->get('password')
+
+        ]);
+
+        $client->save();
+        return view('Clients.index');
+        //echo "jao";
     }
 
     /**

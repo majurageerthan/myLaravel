@@ -27,5 +27,8 @@ Route:: get('/about',function (){
 
 });
 
-Route::resource('posts', 'PostsController');
+// https://blog.pusher.com/laravel-mvc-use/
+//Sorce of the MVC
+//Route::resource('posts', 'PostsController');
+Route::resource('clients', 'ClientsController');
 
